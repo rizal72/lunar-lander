@@ -50,31 +50,6 @@ let ship: Sprite = null
 let THRUST = 0
 let GRAVITY = 0
 scene.setBackgroundColor(15)
-GRAVITY = 5
-THRUST = 10
-let TXT_land = textsprite.create("LAND", 0, 15)
-TXT_land.setPosition(128, 104)
-ship = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . e e e e e e e e e e e e e e . 
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
-    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
-    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
-    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
-    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
-    . . 2 e . . . . . . . . 2 e . . 
-    . . 2 e . . . . . . . . 2 e . . 
-    . 2 e . . . . . . . . . . 2 e . 
-    . 2 e . . . . . . . . . . 2 e . 
-    . 2 e . . . . . . . . . . 2 e . 
-    2 2 e e . . . . . . . . 2 2 2 e 
-    `, SpriteKind.Player)
-ship.setStayInScreen(true)
-ship.ay = GRAVITY
-ship.y = 0
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -197,4 +172,30 @@ scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
     `)
+game.splash("Use UP, LEFT, RIGHT, fight", "gravity and land ship.")
+GRAVITY = 5
+THRUST = 10
+let TXT_land = textsprite.create("LAND", 0, 15)
+TXT_land.setPosition(128, 104)
+ship = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . e e e e e e e e e e e e e e . 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
+    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
+    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
+    4 d b b b 4 4 4 4 4 4 4 4 4 4 4 
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+    . . 2 e . . . . . . . . 2 e . . 
+    . . 2 e . . . . . . . . 2 e . . 
+    . 2 e . . . . . . . . . . 2 e . 
+    . 2 e . . . . . . . . . . 2 e . 
+    . 2 e . . . . . . . . . . 2 e . 
+    2 2 e e . . . . . . . . 2 2 2 e 
+    `, SpriteKind.Player)
+ship.setStayInScreen(true)
+ship.ay = GRAVITY
+ship.y = 0
 tiles.setTilemap(tilemap`level1`)
